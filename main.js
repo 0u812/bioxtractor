@@ -10,6 +10,10 @@ var doc;
 
 fs = require('fs');
 
-var sbmlstr = fs.readFileSync('./GlycolysisOriginal.xml', 'utf8');
-console.log(sbmlstr);
-doc = reader.readSBMLFromString(sbmlstr);
+var sbml = fs.readFileSync('./BIOMD0000000001.xml', 'utf8');
+// console.log(sbml);
+doc = reader.readSBMLFromString(sbml);
+
+var model = doc.getModel();
+
+console.log(model.getNotesString());
